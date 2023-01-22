@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+.feed{
+    width: 380px;
+    height: auto;
+    overflow-y: scroll;
+
+
+}
+.up-bar{
+    width: 380px;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+}
+
+.up-bar img{
+    width: 70px;
+    height: 55px;
+    margin-left: 10px;
+}
+
+.up-bar ion-icon{
+    width: 45px;
+    height: 32px;
+}
+
+.foot-bar{
+    width: 380px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, .85);
+
+}
+
+.foot-bar div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-bar p{
+    color: #505050;
+    width: 300px;
+    height: 64px;
+    font-size: 14px;
+    margin-top: -20px;
+    margin-left: 14px;
+}
+
+.foot-bar ion-icon{
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+}
+.foot-bar input{
+    width: 300px;
+    height: 64px;
+    border: none;
+    margin-top: 40px;
+    margin-left: 10px;
+    color: #000000;
+}
+.mensagens{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 380px;
+    height: auto;
+    background-color: #E5E5E5;
+    overflow-y: scroll;
+}
+.mensagem{
+    width: 380px;
+    height: 40px;
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+.mensagem p{
+    width: 380px;
+    font-family: 'Roboto';
+    color: #000000;
+    margin: 0px 2px;
+    font-size: 14px;
+}
+.mensagem p span:nth-child(2), 
+.mensagem p span:nth-child(3){
+    font-size: 14px;
+    font-weight: bold;
+}
+.mensagem p span:nth-child(1){
+    color: #AAAAAA;
+}
+
+.status {
+    background-color: gray;
+}
+
+.message {
+    background-color: white;
+}
+.private {
+    background-color: pink;
+}
+
+.descricao{
+    width: 259px;
+    height: 84px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Roboto';
+    margin: 15px auto;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+}
+.contatos,
+.visibilidades{
+    width: 100%;
+    height: auto;
+}
+.contato,
+.visibilidade{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.visibilidades{
+    margin-top: -45px;
+}
+.todos{
+    margin-top: -35px;
+}
+
+.online{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 15px;
+}
+
+.icone-contato{
+    width: 24px;
+    height: 24px;
+    color: #000000;
+    margin-right: 10px;
+}
+
+
+.contato div div,
+.visibilidade div div{
+    width: 194px;
+    height: 36px;
+    margin-top: 4px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.sidebar{
+    width: 259px;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, .85);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    overflow-y: scroll;
+    transition: all 1s;
+}
+
+.check{
+    color: #28BB25;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+}
+
+.contato.selecionado .check,
+.visibilidade.selecionado .check{
+    opacity: 1;
+}
+
+.escondido{
+    display: none;
+}
+
+input{
+    font-family: 'Roboto';
+    font-style: italic;
+}
+
+.sidebar::-webkit-scrollbar,
+.mensagem::-webkit-scrollbar { 
+    display: none;
+  }
