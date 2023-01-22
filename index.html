@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Bate-papo Uol</title>
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="feed">
+        <div class="up-bar">
+            <img src="./img/bate-papo-uol-bate-recorde-historico-de-audiencia-no-carnaval-1519174175244_v2_600x600.jpg" alt="icone">
+            <ion-icon onclick="abrirSidebar()" name="people-outline"></ion-icon>
+        </div>
+        <div onclick="fecharSidebar()" class="mensagens">
+        </div>
+        <div onclick="fecharSidebar()" class="foot-bar">
+            <div>
+                <input data-test="input-message" type="text" placeholder="Escreva aqui...">  
+                <p>Enviando para Todos</p>  
+            </div>
+            <ion-icon data-test="send-message" onclick="enviarMensagem()" name="paper-plane-outline"></ion-icon>
+        </div>
+    </div>
+    <div class="sidebar escondido">
+        <div class="descricao">
+            Escolha um contato<br>para enviar mensagem:
+        </div>
+        <div class="contatos">
+            <div class="contato todos selecionado">
+                <div class="online">
+                    <ion-icon class="icone-contato" name="people-outline"></ion-icon>
+                    <div onclick="selecionarContato(this)">Todos</div>
+                </div>
+                <ion-icon class="check" name="checkmark-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="descricao">
+            Escolha a visibilidade:
+        </div>
+        <div class="visibilidades">
+            <div class="visibilidade selecionado">
+                <div class="online">
+                    <ion-icon class="icone-contato" name="lock-open-outline"></ion-icon>
+                    <div onclick="selecionarVisibilidade(this)">Público</div>
+                </div>
+                <ion-icon class="check" name="checkmark-outline"></ion-icon>
+            </div>
+            <div class="visibilidade">
+                <div class="online">
+                    <ion-icon class="icone-contato" name="lock-closed-outline"></ion-icon>
+                    <div onclick="selecionarVisibilidade(this)">Reservadamente</div>
+                </div>
+                <ion-icon class="check" name="checkmark-outline"></ion-icon>
+            </div>
+        </div>
+        <!-- FIm da div visibilidades -->
+    </div>
+    <!-- FIm da div sidebar -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
