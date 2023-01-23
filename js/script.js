@@ -16,15 +16,19 @@ function realizarLogin(nome){
 }
 
 function loginSucesso(callback){
+    const objeto = {name: nomeUsuario};
+    buscarMensagens();
+    buscarContatos();
     // console.log(callback);
+    setInterval(manterUsuarioLogado, 5000, objeto);
+    setInterval(buscarContatos, 10000);
     setInterval(buscarMensagens, 3000);
     // flagInterval = setInterval(buscarMensagens, 3000);
 }
 
 function loginFalha(callback){
     alert("o usuario inserido já está na sala! Digite Novamente!");
-    nomeUsuario = prompt("Digite o nome do seu usuario");
-    realizarLogin(nomeUsuario);
+    window.location.reload();
 }
 
 function manterUsuarioLogado(nome){
@@ -83,8 +87,8 @@ function adicionaMensagemNoHTML(type, horario, nome, texto, mensagensHTML, indic
     </div>`;
         mensagensHTML.innerHTML = mensagensHTML.innerHTML + mensagem;
     }else if(type == "private_message"){
-        if(mensagemData.to == nomeUsuario){
-            mensagem = `<div data-test="message" class="mensagem message private">
+        if(mensagemData.to == nomeUsuario || nome == nomeUsuario){
+            mensagem = `<div data-test="message" class="mensagem private">
                 <p><span>(${horario})</span>  <span>${nome}</span> reservadamente para <span>${mensagemData.to}</span>: ${texto} </p>
                 </div>`;
 
@@ -188,6 +192,11 @@ function enviarMensagem(){
     
     promiseMsg.then(buscarMensagens);
     promiseMsg.catch(tratarErroEnvioMsg);
+
+
+    // Limpar input de mensagem
+    const inputMsg = document.querySelector("input");
+    inputMsg.value = "";
 }
 
 function enviandoPara(){
@@ -203,11 +212,8 @@ function tratarErroEnvioMsg(callback){
 function limparMensagens(){
     const mensagens = document.querySelector(".mensagens");
     mensagens.innerHTML = "";
-
-    const inputMsg = document.querySelector("input");
-    inputMsg.value = "";
 }
 
 realizarLogin(nomeUsuario);
-buscarMensagens();
-buscarContatos();
+
+// file:///home/cleiver/Documents/projeto5-batepapouolHub/index.html
