@@ -138,10 +138,17 @@ function adicionaContatoNoHTML(html){
 function abrirSidebar(){
     const sidebar = document.querySelector(".sidebar");
     sidebar.classList.remove("escondido");
+
+    const overlay = document.querySelector(".overlay");
+    overlay.classList.remove("escondido");
 }
+
 function fecharSidebar(){
     const sidebar = document.querySelector(".sidebar");
     sidebar.classList.add("escondido");
+
+    const overlay = document.querySelector(".overlay");
+    overlay.classList.add("escondido");
 }
 
 function selecionarContato(contato){

@@ -186,6 +186,17 @@
     transition: all 1s;
 }
 
+.overlay{
+    width: 130px;
+    height: 100%;
+    opacity: 0.6;
+    background-color: gray;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
 .check{
     color: #28BB25;
     width: 35px;
