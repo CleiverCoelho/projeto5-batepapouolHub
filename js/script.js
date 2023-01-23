@@ -5,6 +5,14 @@ let flagInterval = 0;
 let indiceUltimaMensagem = 0;
 let usuarioLogado;
 
+
+// enviar mensagem com o enter
+document.addEventListener("keypress", function(e) {
+    if(e.key == "Enter"){
+        enviarMensagem();
+    }
+})
+
 function realizarLogin(nome){
     const objeto = {name: nome};
     const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", objeto);
@@ -208,7 +216,11 @@ function enviarMensagem(){
 
 function enviandoPara(){
     const caixaMensagem = document.querySelector(".foot-bar p");
-    caixaMensagem.innerHTML = "Enviando para " + contatoSelecionado;
+    if(contatoSelecionado == "Público"){
+        caixaMensagem.innerHTML = "Enviando para " + contatoSelecionado;
+    }else{
+        caixaMensagem.innerHTML = "Enviando para " + contatoSelecionado + " (reservadamente)";
+    }
 }
 
 function tratarErroEnvioMsg(callback){
