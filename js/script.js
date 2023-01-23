@@ -111,6 +111,7 @@ function adicionaMensagemNoHTML(type, horario, nome, texto, mensagensHTML, indic
 function buscarContatos(){
     const promiseParticipantes = axios.get("https://mock-api.driven.com.br/api/v6/uol/participants");
 
+    limparContatos();
     promiseParticipantes.then(exibirContatos);
 }
 
@@ -231,6 +232,18 @@ function tratarErroEnvioMsg(callback){
 function limparMensagens(){
     const mensagens = document.querySelector(".mensagens");
     mensagens.innerHTML = "";
+}
+
+function limparContatos(){
+    const contatos = document.querySelector(".contatos");
+    const contatoTodos = `<div class="contato todos selecionado">
+            <div class="online">
+            <ion-icon class="icone-contato" name="people-outline"></ion-icon>
+            <div onclick="selecionarContato(this)">Todos</div>
+            </div>
+            <ion-icon data-test="check" class="check" name="checkmark-outline"></ion-icon>
+            </div>`;
+    contatos.innerHTML = contatoTodos;
 }
 
 realizarLogin(nomeUsuario);
