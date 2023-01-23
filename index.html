@@ -19,11 +19,11 @@
     <div class="feed">
         <div class="up-bar">
             <img src="./img/bate-papo-uol-bate-recorde-historico-de-audiencia-no-carnaval-1519174175244_v2_600x600.jpg" alt="icone">
-            <ion-icon onclick="abrirSidebar()" name="people-outline"></ion-icon>
+            <ion-icon data-test="open-participants" onclick="abrirSidebar()" name="people-outline"></ion-icon>
         </div>
-        <div onclick="fecharSidebar()" class="mensagens">
+        <div class="mensagens">
         </div>
-        <div onclick="fecharSidebar()" class="foot-bar">
+        <div class="foot-bar">
             <div>
                 <input data-test="input-message" type="text" placeholder="Escreva aqui...">  
                 <p>Enviando para Todos</p>  
@@ -35,32 +35,32 @@
         <div class="descricao">
             Escolha um contato<br>para enviar mensagem:
         </div>
-        <div class="contatos">
+        <div data-test="all" class="contatos">
             <div class="contato todos selecionado">
                 <div class="online">
                     <ion-icon class="icone-contato" name="people-outline"></ion-icon>
                     <div onclick="selecionarContato(this)">Todos</div>
                 </div>
-                <ion-icon class="check" name="checkmark-outline"></ion-icon>
+                <ion-icon data-test="check" class="check" name="checkmark-outline"></ion-icon>
             </div>
         </div>
         <div class="descricao">
             Escolha a visibilidade:
         </div>
         <div class="visibilidades">
-            <div class="visibilidade selecionado">
+            <div data-test="public" class="visibilidade selecionado">
                 <div class="online">
                     <ion-icon class="icone-contato" name="lock-open-outline"></ion-icon>
                     <div onclick="selecionarVisibilidade(this)">Público</div>
                 </div>
-                <ion-icon class="check" name="checkmark-outline"></ion-icon>
+                <ion-icon data-test="check" class="check" name="checkmark-outline"></ion-icon>
             </div>
-            <div class="visibilidade">
+            <div data-test="private" class="visibilidade">
                 <div class="online">
                     <ion-icon class="icone-contato" name="lock-closed-outline"></ion-icon>
                     <div onclick="selecionarVisibilidade(this)">Reservadamente</div>
                 </div>
-                <ion-icon class="check" name="checkmark-outline"></ion-icon>
+                <ion-icon data-test="check" class="check" name="checkmark-outline"></ion-icon>
             </div>
         </div>
         <!-- FIm da div visibilidades -->

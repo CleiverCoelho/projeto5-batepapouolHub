@@ -120,12 +120,12 @@ function exibirContatos(callback){
     let contato;
     for(let i = 0; i < contatos.length; i++ ){
         contato = contatos[i].name;
-        mensagem = `<div class="contato">
+        mensagem = `<div data-test="participant" class="contato">
         <div class="online">
             <ion-icon class="icone-contato" name="person-circle-outline"></ion-icon>
             <div onclick="selecionarContato(this)">${contato}</div>
         </div>
-            <ion-icon class="check" name="checkmark-outline"></ion-icon>
+            <ion-icon data-test="check" class="check" name="checkmark-outline"></ion-icon>
         </div>`;
 
         adicionaContatoNoHTML(mensagem);
