@@ -26,7 +26,7 @@
         <div class="foot-bar">
             <div>
                 <input data-test="input-message" type="text" placeholder="Escreva aqui...">  
-                <p>Enviando para Todos</p>  
+                <p data-test="recipient">Enviando para Todos</p>  
             </div>
             <ion-icon data-test="send-message" onclick="enviarMensagem()" name="paper-plane-outline"></ion-icon>
         </div>
@@ -66,7 +66,7 @@
         <!-- FIm da div visibilidades -->
     </div>
     <!-- FIm da div sidebar -->
-    <div onclick="fecharSidebar()" class="overlay escondido"></div>
+    <div onclick="fecharSidebar()" data-test="overlay" class="overlay escondido"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
