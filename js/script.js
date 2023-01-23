@@ -236,7 +236,7 @@ function limparMensagens(){
 
 function limparContatos(){
     const contatos = document.querySelector(".contatos");
-    const contatoTodos = `<div class="contato todos selecionado">
+    const contatoTodos = `<div data-test="all" class="contato todos selecionado">
             <div class="online">
             <ion-icon class="icone-contato" name="people-outline"></ion-icon>
             <div onclick="selecionarContato(this)">Todos</div>
