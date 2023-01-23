@@ -1,4 +1,4 @@
-let nomeUsuario = prompt("Digite o nome do seu usuario");
+let nomeUsuario;
 let visibilidadeSelecionada = "Público";
 let contatoSelecionado = "Todos";
 let flagInterval = 0;
@@ -13,8 +13,12 @@ document.addEventListener("keypress", function(e) {
     }
 })
 
-function realizarLogin(nome){
-    const objeto = {name: nome};
+function realizarLogin(){
+
+    const inputLogin = document.querySelector(".login input");
+    nomeUsuario = inputLogin.value;
+
+    const objeto = {name: nomeUsuario};
     const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", objeto);
     promise.then(loginSucesso);
     promise.catch(loginFalha);
@@ -24,6 +28,16 @@ function realizarLogin(nome){
 }
 
 function loginSucesso(callback){
+
+    const fecharTelaEntrada = document.querySelector(".tela-de-entrada");
+    fecharTelaEntrada.classList.add("escondido");
+
+    const upBar = document.querySelector(".up-bar");
+    upBar.classList.remove("escondido");
+
+    const footBar = document.querySelector(".foot-bar");
+    footBar.classList.remove("escondido");
+
     const objeto = {name: nomeUsuario};
     buscarMensagens();
     buscarContatos();
@@ -246,6 +260,5 @@ function limparContatos(){
     contatos.innerHTML = contatoTodos;
 }
 
-realizarLogin(nomeUsuario);
 
 // file:///home/cleiver/Documents/projeto5-batepapouolHub/index.html

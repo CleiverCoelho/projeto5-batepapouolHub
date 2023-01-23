@@ -17,13 +17,13 @@
 <body>
 
     <div class="feed">
-        <div class="up-bar">
+        <div class="up-bar escondido">
             <img src="./img/bate-papo-uol-bate-recorde-historico-de-audiencia-no-carnaval-1519174175244_v2_600x600.jpg" alt="icone">
             <ion-icon data-test="open-participants" onclick="abrirSidebar()" name="people-outline"></ion-icon>
         </div>
         <div class="mensagens">
         </div>
-        <div class="foot-bar">
+        <div class="foot-bar escondido">
             <div>
                 <input data-test="input-message" type="text" placeholder="Escreva aqui...">  
                 <p data-test="recipient">Enviando para Todos</p>  
@@ -67,6 +67,15 @@
     </div>
     <!-- FIm da div sidebar -->
     <div onclick="fecharSidebar()" data-test="overlay" class="overlay escondido"></div>
+    <!-- FIm div overlay -->
+
+    <div class="tela-de-entrada">
+        <img src="./img/bate-papo-uol-bate-recorde-historico-de-audiencia-no-carnaval-1519174175244_v2_600x600.jpg" alt="icone">
+        <div class="login">
+            <input data-test="input-name" type="text" placeholder="Digite seu nome">
+            <button data-test="send-name" onclick="realizarLogin()">Entrar</button>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
