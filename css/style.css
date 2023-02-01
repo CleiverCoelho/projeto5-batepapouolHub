@@ -80,7 +80,7 @@
 }
 .mensagens{
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     width: 380px;
     height: auto;
     background-color: #E5E5E5;
@@ -210,6 +210,11 @@
 }
 
 .escondido{
+    display: none;
+}
+
+.entrada{
+    opacity: 0;
     display: none;
 }
 

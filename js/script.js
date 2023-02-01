@@ -5,6 +5,9 @@ let flagInterval = 0;
 let indiceUltimaMensagem = 0;
 let usuarioLogado;
 
+const exibirEntrada = document.querySelector(".tela-de-entrada");
+exibirEntrada.classList.remove("entrada");
+
 
 // enviar mensagem com o enter
 document.addEventListener("keypress", function(e) {
@@ -29,6 +32,8 @@ function realizarLogin(){
 
 function loginSucesso(callback){
 
+    exibirEntrada.classList.add("entrada");
+
     const fecharTelaEntrada = document.querySelector(".tela-de-entrada");
     fecharTelaEntrada.classList.add("escondido");
 
@@ -43,9 +48,13 @@ function loginSucesso(callback){
     buscarContatos();
     // console.log(callback);
     setInterval(manterUsuarioLogado, 5000, objeto);
-    setInterval(buscarContatos, 10000);
-    setInterval(buscarMensagens, 3000);
+    // setInterval(buscarContatos, 10000);
+    // setInterval(buscarMensagens, 3000);
     // flagInterval = setInterval(buscarMensagens, 3000);
+
+    // Remover a tela de entrada do html 
+    const telaEntrada = document.querySelector(".tela-de-entrada");
+    telaEntrada.remove();
 }
 
 function loginFalha(callback){
@@ -61,11 +70,6 @@ function buscarMensagens(){
 
     limparMensagens();
 
-    // ir para a ultima mensagem
-    const scrollMensagem = document.querySelector(".mensagens:last-child");
-    if(scrollMensagem != null){
-        scrollMensagem.scrollIntoView();
-    }
 
     const promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/messages");
 
@@ -87,6 +91,14 @@ function exibirMensagens(callback){
         let tipoMensagem = mensagemData.type;
 
         adicionaMensagemNoHTML(tipoMensagem, horario, nome, texto, mensagensHTML, i, mensagemData);
+    }
+
+    // ir para a ultima mensagem
+    const scrollMensagem = document.querySelector(".feed .mensagens ");
+    const scroll = scrollMensagem.lastElementChild;
+    console.log(scrollMensagem);
+    if(scroll != null){
+        scroll.scrollIntoView();
     }
 }
 
